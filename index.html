@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+    <nav>
+        <h2 class="logo">Bat's Portfolio</h2>
+        <ul>
+            <li><a href="about-me.html">About</a></li>
+            <li><a href="education.html">Education</a></li>
+            <li><a href="achievement.html">Achievement</a></li>
+            <li><a href="experience.html">Experience</a></li>
+            <li><a href="Gallery.html">Gallery</a></li>
+        </ul>
+        <div id="clock" class="clock"></div>
+    </nav>
+
+    <main>
+        <section class="hero" id="home">
+            <video autoplay loop muted playsinline class="back-video">
+                <source src="Video/home.mp4" type="video/mp4">
+            </video>
+
+            <div class="video-overlay"></div>
+
+            <div class="hero-content">
+                <h1 class="main-name">ALYA BATRISYA</h1>
+                <div class="divider"></div>
+                <p class="subtitle">A Final Year Information Science Student</p>
+
+                <div class="hero-buttons">
+                    <button id="music-btn" class="music-btn">🔊 Play Music</button>
+                </div>
+
+                <div class="social-links">
+                    <a href="https://www.instagram.com/USERNAME" target="_blank" class="social ig">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.tiktok.com/@USERNAME" target="_blank" class="social tt">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                    <a href="https://wa.me/60123456789" target="_blank" class="social wa">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+
+                <audio id="bg-music" loop>
+                    <source src="Mangu.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>© 2025 Bat’s Portfolio</p>
+    </footer>
+
+    <script>
+        const music = document.getElementById("bg-music");
+        const btn = document.getElementById("music-btn");
+
+        btn.addEventListener("click", () => {
+            if (music.paused) {
+                music.play();
+                btn.textContent = "🎵 Playing...";
+            } else {
+                music.pause();
+                btn.textContent = "🔊 Play Music";
+            }
+        });
+
+        function updateClock() {
+            const now = new Date();
+            const time = now.toLocaleTimeString('en-GB', { hour12: false });
+            const clockEl = document.getElementById("clock");
+            if(clockEl) clockEl.textContent = time;
+        } 
+        setInterval(updateClock, 1000);
+        updateClock();
+    </script>
+</body>
+</html>

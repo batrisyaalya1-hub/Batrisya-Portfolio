@@ -1,0 +1,490 @@
+/* About Me Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'times new roman', serif;
+    background-image: url('Picture/about-me.jpg'); 
+    background-size: contain; 
+    background-attachment: fixed; 
+    background-position: center center; 
+}
+
+/* COLOR THEME */
+:root {
+    --platinum: #e7ecef;
+    --dusk-blue: #274c77; 
+    --steel-blue: #6096ba;
+    --icy-blue: #a3cef1;
+    --marron: #741832;
+    --pink: #ffafe8;
+}
+
+.about-section {
+    padding: 100px 20px 60px; 
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.about-container {
+    grid-template-columns: 1fr; 
+    gap: 40px;
+    max-width: 1200px;
+    width: 70%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 992px) {
+    .about-container {
+        grid-template-columns: 1fr 2fr; 
+    }
+}
+
+/* Profile Card */
+.about-left-column {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    text-align: center;
+    overflow: hidden; 
+}
+
+.profile-card {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 16px; 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 850px;
+    border-bottom: none !important;
+}
+
+/* Slideshow Container */
+.profile-slideshow-container {
+    width: 450px; 
+    height: 450px; 
+    position: relative;
+    margin: 0 auto 25px; 
+    border-radius: 5%;
+    overflow: hidden; 
+    border: 5px solid var(--icy-blue); 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.profile-slide {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+/* Dots Navigation */
+.slideshow-dots {
+    text-align: center;
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+.dot {
+    height: 8px;
+    width: 8px;
+    margin: 0 2px;
+    background-color: var(--pink);
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+    cursor: pointer;
+}
+
+.active-dot, .dot:hover {
+    background-color: var(--marron);
+}
+/* Tamat Slideshow */
+
+.about-name {
+    font-size: 45px; 
+    font-weight: 700;
+    color: var(--dusk-blue); 
+    margin-bottom: 10px;
+}
+
+.about-tagline {
+    font-style: italic;
+    color: var(--grey-olive);
+    font-size: 1.1em;
+}
+
+/* Favourites/Spotify */
+.about-title {
+    font-size: 30px;
+    letter-spacing: 3px;
+    color: var(--marron); 
+    margin-bottom: 25px; 
+    text-align: center;
+    position: relative;
+}
+
+.about-title::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: var(--pink);
+    border-radius: 5px;
+}
+
+.about-info-card .about-points {
+    margin-top: 0;
+}
+
+
+/* Fancy Y */
+.fancy-y {
+    font-family: "Brush Script MT", cursive;
+    font-size: 55px; 
+    color: var(--dusk-blue); 
+    position: relative;
+    top: 4px;
+}
+
+/* About Points (List) */
+.about-points {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+}
+
+.about-points li {
+    margin-bottom: 12px;
+    font-size: 18px; 
+    line-height: 1.7;
+    color: var(--dusk-blue);
+    display: flex;
+    align-items: center;
+}
+
+.about-points li i {
+    color: var(--steel-blue); 
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+/* Character Traits */
+.personality-title {
+    margin-top: 20px !important;
+    font-weight: bold;
+    color: var(--dusk-blue) !important;
+    border-top: 1px solid var(--icy-blue);
+    padding-top: 10px;
+    
+}
+
+.personality-title i {
+    color: var(--dusk-blue) !important;
+    font-size: 1.2em;
+}
+
+.personality-trait {
+    margin-left: 10px;
+    font-style: italic;
+    font-size: 17px !important; 
+    display: inline-block; 
+    margin: center; 
+    padding: 8px 15px; 
+
+    /* Box Styling */
+    background-color: var(--icy-blue); 
+    color: var(--dusk-blue); 
+    border-radius: 20px; 
+    border: 1px solid var(--steel-blue);
+    
+    /*Text */
+    font-size: 0.95em;
+    font-weight: 600; 
+    text-align: center;
+    line-height: 1.2;
+    cursor: default;
+}
+
+.personality-trait i {
+    color: var(--dusk-blue); 
+    margin-right: 8px; 
+}
+
+.about-points {
+    text-align: center; 
+}
+
+.personality-trait i {
+    color: var(--steel-blue) !important; 
+    margin-right: 10px;
+}
+
+
+/* Motivation Card */
+.motivation-quote-card {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    max-width: 350px;
+    border-left: 5px solid var(--steel-blue);
+}
+
+.quote-text {
+    font-size: 1.2em;
+    font-style: italic;
+    color: maroon;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.quote-author {
+    font-weight: bold;
+    color: var(--steel-blue);
+    text-align: right;
+    font-size: 1em;
+}
+
+/*  Info, Favourites, Spotify */
+.about-right-column {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.about-info-card,
+.about-favs-container,
+.spotify-container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Favourites Title Styling */
+.favs-title {
+    font-size: 30px;
+    letter-spacing: 3px;
+    color: var(--marron); 
+    margin-bottom: 25px;
+    text-align: center;
+    position: relative;
+}
+
+.favs-title::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: var(--pink);
+    border-radius: 5px;
+}
+
+/* Spotify Styling */
+.spotify-container {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 30px;
+}
+
+.spotify-container:hover {
+    transform: none; 
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.spotify-title {
+    font-size: 30px;
+    letter-spacing: 3px;
+    color: var(--marron);
+    margin-bottom: 25px;
+    text-align: center;
+    position: relative;
+}
+
+.spotify-title::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: var(--accent-color);
+    border-radius: 5px;
+}
+
+.spotify-container iframe {
+    border: none;
+    width: 100%;
+    height: 380px;
+    border-radius: 10px; 
+}
+
+/* SUB-SECTIONS */
+.fav-flower-section, .fav-food-section {
+    padding: 20px 0;
+    border-top: 1px solid var(--icy-blue);
+    margin-top: 20px;
+}
+
+.sub-fav-title {
+    font-size: 1.3em;
+    color: var(--steel-blue); 
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid var(--platinum);
+}
+
+.flowers-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px;
+    text-align: center;
+}
+
+.flower-item {
+    background-color: var(--platinum); 
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.flower-item:hover {
+    transform: translateY(-5px);
+}
+
+.flower-img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    border: 3px solid var(--accent-color);
+}
+
+.flower-name {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #444;
+    margin-bottom: 5px;
+}
+
+.flower-meaning {
+    font-size: 0.9em;
+    color: #777;
+    font-style: italic;
+}
+
+/* Food/Recipe Section Styling */
+.food-description {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.recipe-toggle-btn {
+    background-color: var(--icy-blue);
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s;
+    margin-bottom: 15px;
+}
+
+.recipe-toggle-btn:hover {
+    background-color: var(--pink); 
+}
+
+.recipe-box {
+    background-color: var(--platinum);
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px dashed var(--icy-blue);
+}
+
+.recipe-box h5 {
+    color: var(--dusk-blue);
+    border-bottom: 1px solid var(--icy-blue);
+    padding-bottom: 5px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.recipe-box ul, .recipe-box ol {
+    padding-left: 20px;
+    font-size: 0.95em;
+    color: #666;
+}
+
+/*  FOOTER */
+.site-footer{
+    width:100%;
+    padding:40px 0;
+    text-align:center;
+    color:white;
+    font-size:0.9rem;
+    letter-spacing:1px;
+    background:linear-gradient(
+        180deg,
+        rgba(39,76,119,0.95),
+        rgba(31,59,91,1)
+    );
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+    .navbar {
+        padding: 20px 30px;
+    }
+}
+@media (max-width: 768px) {
+    .about-section {
+        padding: 100px 15px 40px;
+    }
+
+    .about-name {
+        font-size: 35px;
+    }
+    
+    .fancy-y {
+        font-size: 45px;
+    }
+    
+    .profile-slideshow-container {
+        width: 200px; 
+        height: 200px; 
+    }
+
+    .about-title, .favs-title, .spotify-title {
+        font-size: 24px;
+    }
+
+    .flowers-grid {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+
+@media (max-width: 480px) {
+    .flowers-grid {
+        grid-template-columns: 1fr; 
+    }
+}

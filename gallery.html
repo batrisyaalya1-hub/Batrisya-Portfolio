@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Gallery</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="gallery.css">
+</head>
+<body>
+
+<div class="img-modal" id="imgModal">
+    <span class="close" onclick="closeModal()">×</span>
+    <button class="modal-nav left" onclick="changeImg(-1)">❮</button>
+    <img id="modalImg">
+    <button class="modal-nav right" onclick="changeImg(1)">❯</button>
+</div>
+
+<nav class="navbar">
+    <a href="javascript:history.back()" class="back-link">← Back</a>
+    <div class="logo">Bat's Portfolio</div>
+    <div class="clock" id="clock">--:--</div>
+</nav>
+
+<div class="page-wrapper">
+    <header class="gallery-header">
+        <img src="Picture/gallery.jpg" alt="Gallery Header">
+        <div class="header-overlay">
+            <h1>My Personal Gallery</h1>
+            <p>Moments that matter</p>
+            <a href="#gallery" class="header-btn">View Gallery</a>
+        </div>
+    </header>
+
+    <section class="gallery-section" id="gallery">
+        <div class="gallery-tabs">
+            <button class="tab-button active" onclick="openCategory(event,'me')">ME</button>
+            <button class="tab-button" onclick="openCategory(event,'family')">FAMILY</button>
+            <button class="tab-button" onclick="openCategory(event,'friends')">FRIENDS</button>
+            <button class="tab-button" onclick="openCategory(event,'silat')">SILAT</button>
+        </div>
+
+        <div class="slider-wrapper">
+            <div id="me" class="tab-category active-content">
+                <button class="slide-btn left" onclick="slide('me',-1)">❮</button>
+                <div class="slider-container">
+                    <div class="slider-track">
+                        <img src="Picture/me.jpg" onclick="openModal(this)">
+                        <img src="Picture/me2.jpg" onclick="openModal(this)">
+                        <img src="Picture/me3.jpg" onclick="openModal(this)">
+                        <img src="Picture/me4.jpg" onclick="openModal(this)">
+                        <img src="Picture/me5.jpg" onclick="openModal(this)">
+                        <img src="Picture/me6.jpg" onclick="openModal(this)">
+                        <img src="Picture/me7.jpg" onclick="openModal(this)">
+                    </div>
+                </div>
+                <button class="slide-btn right" onclick="slide('me',1)">❯</button>
+            </div>
+
+            <div id="family" class="tab-category">
+                <button class="slide-btn left" onclick="slide('family',-1)">❮</button>
+                <div class="slider-container">
+                    <div class="slider-track">
+                        <img src="Picture/fam1.jpg" onclick="openModal(this)">
+                        <img src="Picture/fam2.jpg" onclick="openModal(this)">
+                        <img src="Picture/fam3.jpg" onclick="openModal(this)">
+                        <img src="Picture/fam4.jpg" onclick="openModal(this)">
+                        <img src="Picture/fam5.jpg" onclick="openModal(this)">
+                        <img src="Picture/fam6.jpg" onclick="openModal(this)">
+                        <img src="Picture/fam7.jpg" onclick="openModal(this)">
+                    </div>
+                </div>
+                <button class="slide-btn right" onclick="slide('family',1)">❯</button>
+            </div>
+
+            <div id="friends" class="tab-category">
+                <button class="slide-btn left" onclick="slide('friends',-1)">❮</button>
+                <div class="slider-container">
+                    <div class="slider-track">
+                        <img src="Picture/friend1.jpg" onclick="openModal(this)">
+                        <img src="Picture/friend2.jpg" onclick="openModal(this)">
+                        <img src="Picture/friend3.jpg" onclick="openModal(this)">
+                        <img src="Picture/friend4.jpg" onclick="openModal(this)">
+                        <img src="Picture/friend5.jpg" onclick="openModal(this)">
+                        <img src="Picture/friend5.jpg" onclick="openModal(this)">
+                        <img src="Picture/friend5.jpg" onclick="openModal(this)">
+                        <img src="Picture/friend5.jpg" onclick="openModal(this)">
+                        <img src="Picture/friend5.jpg" onclick="openModal(this)">
+                    </div>
+                </div>
+                <button class="slide-btn right" onclick="slide('friends',1)">❯</button>
+            </div>
+
+            <div id="silat" class="tab-category">
+                <button class="slide-btn left" onclick="slide('silat',-1)">❮</button>
+                <div class="slider-container">
+                    <div class="slider-track">
+                        <img src="Picture/silat_gallery1.jpg" onclick="openModal(this)">
+                        <img src="Picture/silat_gallery2.jpg" onclick="openModal(this)">
+                        <img src="Picture/silat_gallery3.jpg" onclick="openModal(this)">
+                    </div>
+                </div>
+                <button class="slide-btn right" onclick="slide('silat',1)">❯</button>
+                <div class="video-gallery">
+                    <video controls><source src="Video/utp_match.mp4" type="video/mp4"></video>
+                    <video controls><source src="Video/palam_match.mp4" type="video/mp4"></video>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<footer class="site-footer"><p>© 2025 Bat’s Portfolio</p></footer>
+<button id="music-btn" class="music-btn">🔊</button>
+<audio id="bg-music" loop><source src="Mangu.mp3" type="audio/mpeg"></audio>
+
+<script>
+const music = document.getElementById("bg-music");
+const btn = document.getElementById("music-btn");
+btn.onclick = () => {
+    if(music.paused){ music.play(); btn.textContent = "🎵"; btn.classList.add("playing"); }
+    else { music.pause(); btn.textContent = "🔊"; btn.classList.remove("playing"); }
+};
+function updateClock(){
+    const now = new Date();
+    document.getElementById("clock").textContent = now.toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'});
+}
+setInterval(updateClock,1000); updateClock();
+
+function openCategory(evt,id){
+    document.querySelectorAll('.tab-category').forEach(el=>el.classList.remove('active-content'));
+    document.querySelectorAll('.tab-button').forEach(b=>b.classList.remove('active'));
+    document.getElementById(id).classList.add('active-content');
+    evt.currentTarget.classList.add('active');
+}
+
+const indexMap = {};
+function slide(id,dir){
+    const track = document.querySelector(`#${id} .slider-track`);
+    const total = track.children.length;
+    if(indexMap[id] === undefined) indexMap[id] = 0;
+    indexMap[id] = (indexMap[id] + dir + total) % total;
+    track.style.transform = `translateX(-${indexMap[id]*100}%)`;
+}
+
+let images=[],current=0;
+const modal = document.getElementById('imgModal');
+const modalImg = document.getElementById('modalImg');
+function openModal(img){
+    images=[...img.parentElement.children];
+    current=images.indexOf(img);
+    modalImg.src=img.src;
+    modal.style.display="flex";
+}
+function closeModal(){ modal.style.display="none"; }
+function changeImg(dir){
+    current=(current+dir+images.length)%images.length;
+    modalImg.src=images[current].src;
+}
+</script>
+</body>
+</html>

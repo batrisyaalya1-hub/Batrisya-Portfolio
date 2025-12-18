@@ -1,0 +1,221 @@
+/* COLOR THEME  */
+:root {
+    --platinum: #e7ecef;
+    --dusk-blue: #274c77;
+    --steel-blue: #6096ba;
+    --icy-blue: #a3cef1;
+    --grey-olive: #8b8c89;
+}
+
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+.education-section {
+    background: url("Picture/education.jpg") center/cover no-repeat; 
+    background-size: cover;
+    padding-top: 130px; 
+    padding-bottom: 60px; 
+    position: relative; 
+    min-height: auto !important; 
+}
+.site-footer {
+    flex-shrink: 0;
+    width: 100%;
+    padding: 40px 0;
+    text-align: center;
+    color: white;
+    background: linear-gradient(
+        180deg,
+        rgba(39,76,119,0.95),
+        rgba(31,59,91,1)
+    );
+}
+
+/* Title */
+.edu-title {
+    font-family: Impact, sans-serif;
+    font-size: 100px; 
+    color: burlywood; 
+    letter-spacing: 3px;
+    position: relative; 
+    text-align: center;
+    margin-bottom: 20px; 
+    text-shadow: 3px 3px 10px rgba(0,0,0,0.4);
+    padding-top: 30px; 
+}
+
+/* Content wrapper */
+.edu-content {
+    width: 90%;
+    max-width: 900px; 
+    margin: 0 auto 50px auto; 
+}
+
+/* Table styling */
+.edu-table {
+    background: burlywood; 
+    backdrop-filter: blur(5px);
+    border-collapse: collapse;
+    width: 100%; 
+    color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+.edu-table th,
+.edu-table td {
+    padding: 17px;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    font-size: 20px;
+}
+
+.edu-table th {background: rgba(0,0,0,0.5);
+    background: rgba(0,0,0,0.5);
+    font-size: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    align-items: center;
+}
+
+.edu-table tr:last-child td {
+    border-bottom: none;
+}
+.edu-table a {
+    color: white; 
+    text-decoration: none; 
+}
+
+.edu-table a:hover {
+    color: var(--icy-blue); 
+}
+
+/* --- DETAIL CARD STYLING --- */
+.edu-detail-wrapper {
+    width: 90%;
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+.edu-detail-wrapper h2 {
+    color: var(--dusk-blue);
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2em;
+    font-weight: 700;
+}
+
+.edu-detail-card {
+    background-color: var(--platinum); 
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 40px; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); 
+    border-left: 10px solid var(--steel-blue); 
+}
+
+.detail-title {
+    color: var(--dusk-blue);
+    font-size: 34px;
+    border-bottom: 2px solid var(--icy-blue);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.detail-title i {
+    margin-right: 10px;
+    color: var(--steel-blue);
+}
+
+.detail-course {
+    font-size: 25px;
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 15px;
+}
+
+/* SENARAI PERINCIAN */
+.detail-points {
+    list-style: none;
+    padding: 0;
+}
+
+.detail-points li {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #555;
+    line-height: 1.5;
+}
+
+.detail-points li i {
+    margin-right: 10px;
+    color: var(--steel-blue);
+}
+
+.detail-gallery {
+    margin-top: 25px;
+    padding-top: 15px;
+    border-top: 1px dashed var(--icy-blue);
+    text-align: center;
+}
+
+.gallery-title {
+    color: var(--dusk-blue);
+    font-size: 1.1em;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.image-previews {
+    display: flex;
+    justify-content: center;
+    gap: 15px; 
+    flex-wrap: wrap;
+}
+
+.image-previews a {
+    text-decoration: none;
+    line-height: 0; 
+}
+
+.image-previews .thumb {
+    width: 200px; 
+    height: 200px; 
+    object-fit: cover; 
+    border-radius: 8px;
+    border: 3px solid var(--platinum);
+    transition: all 0.2s ease;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.image-previews .thumb:hover {
+    border-color: var(--steel-blue); 
+    transform: scale(1.05); 
+}
+
+.location-link {
+    color: var(--steel-blue); 
+    text-decoration: none; 
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.location-link:hover {
+    color: var(--dusk-blue); 
+    text-decoration: underline; 
+}

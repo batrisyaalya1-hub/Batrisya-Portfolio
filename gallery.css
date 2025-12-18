@@ -1,0 +1,317 @@
+/* =========================================
+   1. RESET & VARIABLES
+   ========================================= */
+:root {
+    --dark: #274c77;
+    --accent: #6096ba;
+    --light: #e7ecef;
+    --maroon: #800000; /* Warna Maroon untuk Header */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f3f6f8;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Untuk pastikan footer tak terapung */
+}
+
+/* =========================================
+   2. NAVIGATION
+   ========================================= */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 70px;
+    background: var(--dark);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5%;
+    z-index: 1000;
+}
+
+.back-link {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.logo {
+    font-weight: 700;
+}
+
+.clock {
+    background: rgba(255,255,255,0.1);
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.9rem;
+}
+
+/* =========================================
+   3. HEADER (BACK TO ORIGINAL STYLE)
+   ========================================= */
+.gallery-header {
+    margin-top: 70px;
+    height: calc(100vh - 70px);
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery-header img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.header-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 4%; 
+    color: rgba(52, 74, 183, 0.927);
+    text-align: left;
+}
+
+.header-overlay h1 {
+    font-size: clamp(3rem, 5vw, 3rem);
+    font-weight: 900;
+    text-shadow: none; 
+    margin-bottom: 10px;
+}
+
+.header-overlay p {
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+    color:  rgba(52, 74, 183, 0.927);
+}
+
+.header-btn {
+    align-self: flex-start;
+    padding: 12px 30px;
+    background: rgb(31, 31, 123);
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.header-btn:hover {
+    background: var(--dark);
+    transform: translateY(-3px);
+}
+
+/* =========================================
+   4. GALLERY SECTION & TABS
+   ========================================= */
+.gallery-section {
+    padding: 80px 5%;
+    flex: 1; /* Ambil ruang supaya footer tolak ke bawah */
+}
+
+.gallery-tabs {
+    background: var(--light);
+    padding: 10px;
+    border-radius: 50px;
+    max-width: 600px;
+    margin: 0 auto 50px auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+.tab-button {
+    background: none;
+    border: none;
+    padding: 12px 25px;
+    font-weight: 600;
+    cursor: pointer;
+    color: #555;
+    border-radius: 30px;
+    transition: 0.3s;
+}
+
+.tab-button.active {
+    background: var(--accent);
+    color: white;
+}
+
+/* =========================================
+   5. SLIDER SYSTEM (FIXED)
+   ========================================= */
+.slider-wrapper {
+    max-width: 1100px;
+    margin: auto;
+    position: relative;
+}
+
+.tab-category {
+    display: none;
+}
+
+.active-content {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.slider-container {
+    overflow: hidden; /* Penting supaya gambar tak melimpah */
+    border-radius: 26px;
+    background: white;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+.slider-track {
+    display: flex;
+    transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.slider-track img {
+    min-width: 100%;
+    height: 550px;
+    object-fit: cover;
+    cursor: pointer;
+    display: block;
+}
+
+/* NAVIGATION ARROWS */
+.slide-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: white;
+    color: var(--dark);
+    border: none;
+    width: 60px; /* Saiz butang besar */
+    height: 60px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    z-index: 10;
+    font-size: 1.5rem;
+    transition: 0.3s;
+}
+
+.slide-btn:hover {
+    background: var(--accent);
+    color: white;
+}
+
+.slide-btn.left { left: -30px; }
+.slide-btn.right { right: -30px; }
+
+/* =========================================
+   6. VIDEO & MODAL
+   ========================================= */
+.video-gallery {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 20px;
+}
+
+video {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.img-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.95);
+    align-items: center;
+    justify-content: center;
+    z-index: 3000;
+}
+
+.img-modal img {
+    max-width: 90%;
+    max-height: 85%;
+    border-radius: 10px;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+}
+
+.modal-nav {
+    position: absolute;
+    background: rgba(255,255,255,0.1);
+    color: white;
+    border: none;
+    padding: 20px;
+    font-size: 2rem;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.modal-nav.left { left: 20px; }
+.modal-nav.right { right: 20px; }
+
+/* =========================================
+   7. FOOTER & MUSIC
+   ========================================= */
+.site-footer {
+    background: var(--dark);
+    color: white;
+    text-align: center;
+    padding: 40px 0;
+    margin-top: auto; /* Push ke bawah */
+}
+
+.music-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    background: var(--accent);
+    color: white;
+    font-size: 1.4rem;
+    cursor: pointer;
+    z-index: 2000;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* =========================================
+   8. RESPONSIVE
+   ========================================= */
+@media(max-width: 768px) {
+    .header-overlay h1 { font-size: 2.8rem; }
+    .header-overlay { padding-left: 5%; }
+    .slider-track img { height: 350px; }
+    .slide-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 1.2rem;
+    }
+    .slide-btn.left { left: 10px; }
+    .slide-btn.right { right: 10px; }
+}
