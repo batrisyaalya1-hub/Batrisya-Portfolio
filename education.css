@@ -24,7 +24,7 @@ main {
 }
 
 .education-section {
-    background: url("Picture/education.jpg") center/cover no-repeat; 
+    background: url("education.jpg") center/cover no-repeat; 
     background-size: cover;
     padding-top: 130px; 
     padding-bottom: 60px; 
@@ -219,3 +219,4 @@ main {
     color: var(--dusk-blue); 
     text-decoration: underline; 
 }
+
