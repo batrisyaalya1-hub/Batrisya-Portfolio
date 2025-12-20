@@ -436,18 +436,25 @@ body {
 }
 
 /*  FOOTER */
-.site-footer{
-    width:100%;
-    padding:40px 0;
-    text-align:center;
-    color:white;
-    font-size:0.9rem;
-    letter-spacing:1px;
-    background:linear-gradient(
+.site-footer {
+    width: 100vw; /* Paksa penuhi skrin */
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    
+    padding: 40px 0;
+    text-align: center;
+    color: white;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    background: linear-gradient(
         180deg,
         rgba(39,76,119,0.95),
         rgba(31,59,91,1)
     );
+    z-index: 10;
 }
 
 /* Responsive adjustments */
@@ -489,3 +496,4 @@ body {
     }
 
 }
+
